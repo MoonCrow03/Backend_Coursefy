@@ -1,25 +1,25 @@
 # CourseFy API
 
-**Colaboradores**: Aroa Ochoa (GitHub: kiraStark)
+**Contributors**: Aroa Ochoa (GitHub: kiraStark)
 
-CourseFy es un proyecto realizado en grupo para la universidad utilizando la metodología SCRUM.
+CourseFy is a group project developed for university using the SCRUM methodology.
 
-Consiste en una API REST desarrollada con Spring Boot para gestionar una plataforma de cursos online.
-El proyecto permite administrar cursos, usuarios, categorías, idiomas, lecciones, matrículas y reseñas, además de realizar búsquedas y consultas sobre el progreso de los estudiantes.
+It consists of a REST API built with Spring Boot to manage an online course platform.
+The project allows managing courses, users, categories, languages, lessons, enrollments, and reviews, as well as performing searches and queries on student progress.
 
-### Funcionalidades principales
+### Main features
 
-* Crear, consultar, actualizar y eliminar cursos
-* Registrar y listar usuarios
-* Gestionar categorías e idiomas
-* Crear y actualizar lecciones
-* Inscribir usuarios en cursos
-* Marcar lecciones como completadas
-* Crear y actualizar reseñas
-* Consultar cursos por categoría, idioma, fecha de actualización y otros criterios
-* Obtener rankings de mejores profesores y estudiantes
+* Create, view, update, and delete courses
+* Register and list users
+* Manage categories and languages
+* Create and update lessons
+* Enroll users in courses
+* Mark lessons as completed
+* Create and update reviews
+* Query courses by category, language, last update date, and other criteria
+* Get rankings of best teachers and students
 
-### Tecnologías utilizadas
+### Technologies used
 
 * Spring Boot
 * Spring Web
@@ -28,15 +28,15 @@ El proyecto permite administrar cursos, usuarios, categorías, idiomas, leccione
 * JWT
 * Hibernate Validation
 * Swagger / OpenAPI
-* H2 Database y MySQL
+* H2 Database and MySQL
 * Lombok
 
-### Estructura general
+### General structure
 
-El proyecto sigue una arquitectura por capas:
-* **api/**: controladores REST.
-* **application/**: servicios, DTOs y excepciones.
-* **domain/**: entidades del modelo de negocio.
-* **persistence/**: repositorios de acceso a datos.
-* **security/**: configuración y autenticación.
-* **utils/**: utilidades e inicialización de datos.
+The project follows a layered architecture:
+* **api/**: REST controllers.
+* **application/**: services, DTOs, and exceptions.
+* **domain/**: business model entities.
+* **persistence/**: data access repositories.
+* **security/**: configuration and authentication.
+* **utils/**: utilities and data initialization.
