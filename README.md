@@ -1,6 +1,6 @@
 # CourseFy API
 
-**Colaboradores**: Aroa Ochoa (GitHub: kiraStark) y Guillem Sabaté (GitHub: GuillemSabGou)
+**Colaboradores**: Aroa Ochoa (GitHub: kiraStark)
 
 CourseFy es un proyecto realizado en grupo para la universidad utilizando la metodología SCRUM.
 
