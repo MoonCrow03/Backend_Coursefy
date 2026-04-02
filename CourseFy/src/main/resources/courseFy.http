@@ -1,0 +1,131 @@
+### login admin
+POST http://localhost:8080/authenticate
+content-type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+> {%
+    client.global.set("auth_token", response.headers.valueOf("Authorization"));
+    client.log("token: " + response.headers.valueOf("Authorization"));
+%}
+
+### login teacher
+POST http://localhost:8080/authenticate
+content-type: application/json
+
+{
+  "username": "josep",
+  "password": "password123"
+}
+> {%
+    client.global.set("auth_token", response.headers.valueOf("Authorization"));
+    client.log("token: " + response.headers.valueOf("Authorization"));
+%}
+
+### login student
+POST http://localhost:8080/authenticate
+content-type: application/json
+
+{
+  "username": "julia",
+  "password": "password123"
+}
+> {%
+    client.global.set("auth_token", response.headers.valueOf("Authorization"));
+    client.log("token: " + response.headers.valueOf("Authorization"));
+%}
+
+### login unregistered
+POST http://localhost:8080/authenticate
+content-type: application/json
+
+{
+  "username": "maria",
+  "password": "password123"
+}
+> {%
+    client.global.set("auth_token", response.headers.valueOf("Authorization"));
+    client.log("token: " + response.headers.valueOf("Authorization"));
+%}
+
+### post user
+POST http://localhost:8080/users
+Authorization: {{auth_token}}
+content-type: application/json
+
+{
+  "username": "AroaO",
+  "name": "Aroa",
+  "first_surname": "Ochoa",
+  "second_surname": "Bardet",
+  "email": "aroa@gmail.com",
+  "gender": "Woman"
+}
+
+### get all users
+GET http://localhost:8080/users
+Authorization: {{auth_token}}
+
+### list courses by cathegory or language
+GET http://localhost:8080/users/searchByCtgOrLan?ctgId=1&lanId=1
+Authorization: {{auth_token}}
+
+### list courses ordered by date
+GET http://localhost:8080/users/searchByUpd?username=JuliaC
+Authorization: {{auth_token}}
+
+### get taken course
+GET http://localhost:8080/users/RubenZ/courses/SQL2
+Authorization: {{auth_token}}
+
+### get user's course finish lessons
+GET http://localhost:8080/users/RubenZ/courses/SQL2
+Authorization: {{auth_token}}
+
+### get users enrolled in a course
+GET http://localhost:8080/users/courses/History of videogames/enrolled
+Authorization: {{auth_token}}
+
+### get top teachers
+GET http://localhost:8080/users/bestTeachers?n=2&y=2023
+Authorization: {{auth_token}}
+
+### get top students
+GET http://localhost:8080/users/topStudents?n=2
+Authorization: {{auth_token}}
+
+### post enrollment
+POST http://localhost:8080/users/JuliaC/courses/SQL/enrollments
+Authorization: {{auth_token}}
+content-type: application/json
+
+{
+  "rating": 2,
+  "price": 25
+}
+
+### get course
+GET http://localhost:8080/courses/Java
+Authorization: {{auth_token}}
+
+### course search
+GET http://localhost:8080/courses/search?q=SQL
+Authorization: {{auth_token}}
+
+### get user's courses
+GET http://localhost:8080/users/JuliaC/courses
+Authorization: {{auth_token}}
+
+### get user's reviews listed by creation date
+GET http://localhost:8080/users/JuliaC/courses/History of videogames/enrollments/reviews/listByDate
+Authorization: {{auth_token}}
+
+### get user's reviews listed by satisfaction degree
+GET http://localhost:8080/users/JuliaC/courses/History of videogames/enrollments/reviews/listByRating
+Authorization: {{auth_token}}
+
+### course available
+GET http://localhost:8080/courses/available
+Authorization: {{auth_token}}
